@@ -8,6 +8,13 @@ class NewTransaction extends StatelessWidget {
 
   NewTransaction(this.addTx);
 
+  void submitData() {
+    addTx(
+      titleController.text,
+      double.parse(amountController.text),
+    );
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -25,13 +32,11 @@ class NewTransaction extends StatelessWidget {
               decoration: const InputDecoration(labelText: 'Amount'),
               controller: amountController,
               keyboardType: TextInputType.number,
+              onSubmitted:((value) => submitData()),
             ),
             TextButton(
               onPressed: () {
-                addTx(
-                  titleController.text,
-                  double.parse(amountController.text),
-                );
+                submitData();
               },
               child: const Text(
                 'Add Transaction',
