@@ -13,7 +13,17 @@ class MyApp extends StatelessWidget {
       title: 'Personal Expenses',
       theme: ThemeData(
         primarySwatch: Colors.purple,
-        accentColor: Colors.amber,
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+            .copyWith(secondary: Colors.amber),
+        fontFamily: 'Quicksand',
+        appBarTheme: AppBarTheme(
+          titleTextStyle: ThemeData.dark()
+              .textTheme
+              .copyWith(
+                titleSmall: TextStyle(fontFamily: 'OpenSans'),
+              )
+              .titleLarge,
+        ),
       ),
       home: MyHomePage(),
     );
@@ -71,7 +81,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Personal Expenses'),
+        title: const Text(
+          'Personal Expenses',
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.add),

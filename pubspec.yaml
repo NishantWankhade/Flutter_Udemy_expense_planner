@@ -57,6 +57,20 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  fonts:
+    - family: OpenSans
+      fonts:
+        - asset: assets\fonts\OpenSans-Bold.ttf
+        - asset: assets\fonts\OpenSans-Regular.ttf
+          weight: 700
+    - family: Quicksand
+      fonts:
+        - asset: assets\fonts\Quicksand-Bold.ttf
+        - asset: assets\fonts\Quicksand-Light.ttf
+        - asset: assets\fonts\Quicksand-Medium.ttf
+        - asset: assets\fonts\Quicksand-Regular.ttf
+          weight: 700
+
 dart:
   dart.previewFlutterUiGuides: true,
   dart.previewFlutterUiGuidesCustomTracking: true,
@@ -76,19 +90,7 @@ dart:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: OpenSans
-      fonts:
-        - asset: assets\fonts\OpenSans-Bold.ttf
-        - asset: assets\fonts\OpenSans-Regular.ttf
-          weight: 700
-    - family: Quicksand
-      fonts:
-        - asset: assets\fonts\Quicksand-Bold.ttf
-        - asset: assets\fonts\Quicksand-Light.ttf
-        - asset: assets\fonts\Quicksand-Medium.ttf
-        - asset: assets\fonts\Quicksand-Regular.ttf
-          weight: 700
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
