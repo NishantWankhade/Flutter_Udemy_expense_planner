@@ -1,6 +1,5 @@
-// ignore_for_file: unnecessary_string_escapes
-
 import 'package:flutter/material.dart';
+import 'package:flutter_expense_planner/widgets/chart.dart';
 import 'package:flutter_expense_planner/widgets/new_transaction.dart';
 
 import 'models/transaction.dart';
@@ -52,6 +51,14 @@ class _MyHomePageState extends State<MyHomePage> {
     // ),
   ];
 
+  List<Transaction> get _recentTransaction {
+    return _userTransactions.where((tx) {
+      return tx.date.isAfter(DateTime.now().subtract(
+        Duration(days: 7),
+      ));
+    }).toList();
+  }
+
   void _addNewTransaction(String txTitle, double txAmount) {
     final newTx = Transaction(
       amount: txAmount,
@@ -98,14 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              width: double.infinity,
-              child: const Card(
-                color: Colors.blue,
-                elevation: 5,
-                child: Text('CHART!'),
-              ),
-            ),
+            Chart(_recentTransaction),
             TransactionList(_userTransactions),
           ],
         ),
