@@ -16,13 +16,12 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
             .copyWith(secondary: Colors.amber),
         fontFamily: 'Quicksand',
-        appBarTheme: AppBarTheme(
-          titleTextStyle: ThemeData.dark()
-              .textTheme
-              .copyWith(
-                titleSmall: TextStyle(fontFamily: 'OpenSans'),
-              )
-              .titleLarge,
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+            fontSize: 20,
+            fontFamily: 'OpenSans',
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       home: MyHomePage(),
