@@ -56,6 +56,8 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+  assets: 
+    - assets/images/waiting.png
   uses-material-design: true
   fonts:
     - family: OpenSans
@@ -70,6 +72,7 @@ flutter:
         - asset: assets\fonts\Quicksand-Medium.ttf
         - asset: assets\fonts\Quicksand-Regular.ttf
           weight: 700
+
 
 dart:
   dart.previewFlutterUiGuides: true,
