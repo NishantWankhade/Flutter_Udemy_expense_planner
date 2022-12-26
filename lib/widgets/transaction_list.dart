@@ -4,8 +4,8 @@ import 'package:intl/intl.dart';
 
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
-
-  const TransactionList(this.transactions);
+  final Function deleteTx;
+  const TransactionList(this.transactions, this.deleteTx);
 
   @override
   Widget build(BuildContext context) {
@@ -15,9 +15,10 @@ class TransactionList extends StatelessWidget {
           ? Column(
               children: [
                 const Text(
-                  "No Transactions !!",
+                  "No Transactions added yet!!",
                   style: TextStyle(
                     fontFamily: 'Quicksand',
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(
@@ -59,6 +60,11 @@ class TransactionList extends StatelessWidget {
                     ),
                     subtitle: Text(
                       DateFormat.yMMMd().format(transactions[index].date),
+                    ),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete),
+                      color: Color.fromARGB(255, 255, 0, 0),
+                      onPressed: () => deleteTx(transactions[index].id),
                     ),
                   ),
                 );
