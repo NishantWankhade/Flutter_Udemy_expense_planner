@@ -8,11 +8,6 @@ import 'models/transaction.dart';
 import 'widgets/transaction_list.dart';
 
 void main() {
-  // WidgetsFlutterBinding();
-  // SystemChrome.setPreferredOrientations([
-  //   DeviceOrientation.portraitDown,
-  //   DeviceOrientation.portraitUp,
-  // ]);
   runApp(MyApp());
 }
 
